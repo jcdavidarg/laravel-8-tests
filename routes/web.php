@@ -27,3 +27,8 @@ Route::get('/home/{name?}', [HomeController::class, 'index'])->name('home.index'
 
 //  PASAR VISTA POR CONTROLADOR
 Route::get('/user', [UserController::class, 'index'])->name('user.index');
+
+//  SE PUEDE PASAR POR UNA ARRAY
+Route::get('/metal', function() {
+    return view('metal', ['song' => 'The trooper']);
+});
