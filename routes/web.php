@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
@@ -36,3 +37,14 @@ Route::get('/user', [UserController::class, 'index'])->name('user.index');
 Route::get('/metal', function() {
     return view('metal', ['song' => 'The trooper']);
 });
+
+//  CLIENT CONTROLLER
+Route::get('/posts', [ClientController::class, 'getAllPost'])->name('posts.getallpost');
+
+Route::get('/posts/{id}', [ClientController::class, 'getPostById'])->name('posts.getpostbyid');
+
+Route::get('/add-post', [ClientController::class, 'addPost'])->name('posts.addpost');
+
+Route::get('/update-post', [ClientController::class, 'updatePost'])->name('posts.update');
+
+Route::get('/delete-post/{id}', [ClientController::class, 'deletePost'])->name('posts.delete');
