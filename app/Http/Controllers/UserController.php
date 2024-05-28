@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function index () {
+    /* public function index() {
 
         $name = 'DAVID';
         //$name = null;
@@ -18,5 +18,14 @@ class UserController extends Controller
         );
 
         return view('user', compact('name', 'users')); //COMPACT PARA PASAR EN UN ARRAY VARIABLES
+    } */
+
+    /* public function index(Request $request) {
+        return $request->method();
+    } */
+
+    public function index(Request $request) {
+        //return $request->url();
+        return $request->fullUrl();
     }
 }
